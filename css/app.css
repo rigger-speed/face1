@@ -1,3 +1,14 @@
+@font-face {
+  font-family: FontName;
+  src: url('../yekan-font/Yekan.eot');
+  src: url('../yekan-font/Yekan.eot?#iefix') format('FontName-opentype'),
+       url('../yekan-font/Yekan.woff') format('woff'),
+       url('../yekan-font/Yekan.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 @charset "UTF-8";
 /*! bulma.io v1.0.0 | MIT License | github.com/jgthms/bulma */
 /* Bulma Utilities */
