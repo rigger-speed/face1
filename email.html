@@ -8,19 +8,11 @@
 
 <h2>Contact us</h2>
 
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name" required>
-  <br>
- 
-  <label for="email">Email Address:</label>
-  <input type="email" id="email" name="email" required>
-  <br>
- 
-  <label for="message">Message:</label>
-  <textarea id="message" name="message" required></textarea>
-  <br>
- 
-  <button type="submit">Send</button>
+<form action="http://formspree.io/your@email.com" method="POST">
+  <input type="email" name="_replyto">
+    <textarea   name="body">
+    </textarea>
+  <input type="submit" value="Send">
 </form>
 
 </body>
