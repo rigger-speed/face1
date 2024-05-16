@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)https://rigger-speed.github.io/face/FacialAutoRig.html -->
+<html lang="en" dir="rtl" font-family="Yekan" class="translated-ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Facial Auto Rig</title>
+<link rel="stylesheet" href="./Facial Auto Rig_files/app.css"><link type="text/css" rel="stylesheet" charset="UTF-8" href="./Facial Auto Rig_files/m=el_main_css"></head>
+ 
+<body class="container is-max-desktop">
+
+<section class="box m-5 has-background-grey-light has-text-black-bis is-large">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Facial Auto Rig V1.0  </font></font></h1>
+        <h2 class="title has-text-grey mr-4 is-size-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+          Script to speed up Rig in Maya
+        </font></font></h2>
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </div>
+    </div>
+  </section>
+<section class="box m-5 has-background-light has-text-black-bis">
+<h1 class="title has-text-grey mr-4 is-size-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">arh_Facial Auto Rig script tutorial  </font></font></h1>
+ </section>
+<section class="box m-5 has-background-light has-text-black-bis " font-family="Yekan">
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">This tutorial shows you how to automate the rigging and skinning of animation characters using a Python script.
+  </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">This script consists of three main steps:
+  </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">First, name your project in the first tab, which is face_name by default.
+</font></font></p>
+ <br>
+<img src="./Facial Auto Rig_files/image001.jpg"> 
+ <hr>
+
+<p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1. Selection of joints or primary controls:</font></font></strong>
+  <br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> To start working from the script, you must introduce three joints or primary controls as data to the script.
+  </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">These three joints include the joint or the main control of the head and the joint and the joint of the lower jaw control or the upper jaw control (which is optional and you can not choose it) of the head. The upper jaw depends on the type of primary joint you have.
+</font></font></p>
+ <br>
+<img src="./Facial Auto Rig_files/image002.jpg"> 
+ <br>
+
+ <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> 
+  This makes it possible to connect joiners and controls to these main controls at the end of the script to get better performance.
+  </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Note: There is an optional option under these three buttons, which by selecting the head mesh, i.e. the 3D model of the series that is being rigged and washed, and pressing the button, a copy of the model is taken with all the features it had before, which means it is fully connected to the joints and controls. the previous ones while the new mesh is connected to them. 
+   </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">This option is optional and you can do rigging on your original model, but the advantage of copying is that you have a new model with previous characteristics in addition to your original model, and you can use your original model in case of damage or other uses.
+</font></font></p>
+ <br>
+<img src="./Facial Auto Rig_files/image003.jpg"> 
+ <br>
+
+  <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">   - Choose the name of the part of the head you want to rig. For this, you must choose one of the radii.
+   </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Like the image below, lips are selected by default, that is, you can do sanding for the lips.
+</font></font></p>
+ <br>
+<img src="./Facial Auto Rig_files/image004.jpg"> 
+ <hr>
+
+
+<p>   
+<strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2. Initial jointing:</font></font></strong>
+<br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> • The script detects the edges specified in the model and automatically places the joints in the appropriate places.
+ </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">• This minimizes the need for manual rigging and saves you time and effort significantly.
+ </font></font><br><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">For this, we have to select the part of the head that we want to joint in the radius section, for example, we select the radius of the lip and then in the settings section we put the number of controls we need and 
+  </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">in the number of joints section we put the number we need and Then, in the next numerical box, we determine the number of rings that is the range of skin selection for each joint.
+ </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">At the end, there is a reset button, by pressing this button, all the numbers and changes made in this radius, for example, the lip, will return to its default state,
+ </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">in the line below them, there are a number of tools for selecting edges and vertices to speed up the selection and change. raise it, at the end of this line there is a mirror button, which is not a tool of Maya itself, but a new tool to select the vertices of the opposite side with one click.
+</font></font></p>
+ <br>
+<img src="./Facial Auto Rig_files/image005.jpg"> 
+ <br>
+
+
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+ In the next line, there are two buttons, in the first button we select the edges of the upper lip (first Edge) and then press the button to save them,
+ </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">of course, the second time it will be named (first_curve Lips).
+ </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">The button in front of it is for selecting the number of vertices or places that are going to be scanned. First, we select their range and then press the button until the number of selected vertices is displayed in the button.
+  </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Its name will be (first vertexs) and to reload the form with the name (vertAll_F Lips).
+ </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">&gt; In the next line of the first button on the left, you must select the edges of the lower lip (second Edge) or (second_curve Lips), which means the area to be jointed, and the button in front of it is for the area of ​​the vertices that are going to be skinned. (vertexs second) or (vertAll_S Lips )
+</font></font></p>
+ <br>
+<img src="./Facial Auto Rig_files/image006.jpg"> 
+<br><img src="./Facial Auto Rig_files/image007.jpg"> 
+<br>
+
+  <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">  After completing the above steps, you must press the joint and skin create button to start the jointing operation.</font></font></p>
+ <br>
+<img src="./Facial Auto Rig_files/image008.jpg"> 
+ <hr>
+
+ <p> 
+<strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">3. Adding initial controls:</font></font></strong>
+<br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> • After creating joints, the script adds initial controls for each joint.
+ </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">• These controls allow you to easily animate your character.
+ </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">In this next step, after setting the controls and activating the checkboxes and choosing the color of the controls and changing the appropriate size for the controls, it is enough to click on the Build Controls button (Rigging and Build Controls) so that the initial controls are created automatically.
+</font></font></p>
+ <br>
+<img src="./Facial Auto Rig_files/image009.jpg"> 
+ <hr>
+
+ <p> 
+<strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">4. Building Advanced Controls:</font></font></strong>
+<br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> • Finally, the script allows you to add final controls to fine-tune your character's movements.
+ </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">• To do this step, before clicking on the final controls button, you must enter the settings of the distance between the animations and the amount of movement of the controls (Animate) numerically,
+  </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">and then press the Create Final Control button (Create Final Ctrl) to create the final controls. The required vanities should be added to them.
+</font></font></p>
+ <br>
+<img src="./Facial Auto Rig_files/image010.jpg"> 
+ <br>
+
+ <p> <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Advantages of using this script:</font></font></strong>
+<br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> • Speed: significantly speeds up the rigging and skinning process.
+ </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">• Accuracy: Joints and controls are precisely placed in the right places.
+ </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">• Ease of use: The script is easy to use, even if you have no prior rigging experience.
+</font></font></p><hr>
+ <br><br> <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">5. Follow the steps:</font></font></strong>
+<br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> • The script will ask you to select the edges of the model to which you want to add joints.
+ </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">• After selecting the edges, the script automatically creates the joints and controls.
+ </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">• If desired, you can also add final controls.
+
+ </font></font><br><br><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6. Adding Squash Stretch and Bending in the head:</font></font></strong>
+  <br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> To add the ability to adjust the head itself in the second tab, there is a button that you must first select the head mesh or the meshes folder, and then by pressing the button, this feature will be added to the head.
+</font></font><p></p>
+ <br>
+<img src="./Facial Auto Rig_files/image011.jpg"> 
+ <hr>
+
+ <p>
+  <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7. Adding ready-made animations by moving the controls:</font></font></strong>
+  <br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> the script has a section in the second tab that can be selected by selecting a control as the addition of a new attribute (set Ctrl) and selecting a name for it (Blink). Then by moving the controls head to Do the mode you need
+   </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">and at the end by selecting all the controls that were moved and pressing the (Anim Driven Key) button, their animation will be saved inside the control with the name you chose, and then you can access them easily and with one movement of several controls you move</font></font></p>
+ <br>
+<img src="./Facial Auto Rig_files/image012.jpg"> 
+ <hr>
+
+ <p>
+  <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8. Editing the skin and weights of the head model:</font></font></strong>
+  <br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> in the second tab, there is a section that contains a series of settings to change or edit your skinned mesh, the ability to soften the selected parts or you can use a brush to make those parts softer. . By pressing the (Auto Smooth) button, a new form will open and the settings will be available to you.
+ </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">With Paint Smooth or Sel Smooth, you can soften the weights of the joints.
+ </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">By replacing (replace paint) or (Sel replace) the selected vertices and weighting them to the nearest joint to the vertex, this is done automatically by selecting a vertex and clicking on replase or by using a brush.
+ </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Or the Hammer option, which can be done easily by selecting the vertices, or you can do this with a brush. In addition, the vertex selection tools are available below them to make the work easier.
+</font></font></p>
+ <br>
+<img src="./Facial Auto Rig_files/image013.jpg"> 
+ <hr>
+
+
+
+ <p>
+  <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">9. Animate your character:</font></font></strong>
+<br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> • You can now animate your character using the controls that the script created.
+ </font></font><br><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tips:
+ </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">• Before using the script, make sure your character model is properly UV-unwrapped. (not required)
+ </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">• Before using the script, your model topology must be done correctly. (not required
+ </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">) If you have problems with the script, you can refer to the documentation in the script file for help.
+ </font></font><br><br><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Images:</font></font></strong>
+<br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Here are some images to help you understand the steps of the tutorial:
+ </font></font><br><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Image 1: Selecting Edges:</font></font></strong>
+<br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> [Selecting Edges to Grind Top Edges]
+</font></font></p>
+ <br>
+<img src="./Facial Auto Rig_files/image014.jpg"> 
+ <br>
+
+ <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[Selecting the edges to rig the bottom edges]</font></font></p>
+ <br>
+<img src="./Facial Auto Rig_files/image016.jpg"> 
+ <br>
+
+ <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+  Image 2: Creating joints:
+ </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[image of automatically creating joints]
+</font></font></p>
+ <br>
+<img src="./Facial Auto Rig_files/image018.jpg"> 
+ <br>
+
+ <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+ Figure 3: Adding controls:
+ </font></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[Image of adding controls to joints]
+</font></font></p>
+ <br>
+<img src="./Facial Auto Rig_files/image020.jpg"> 
+ <br>
+
+
+ <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+  Image 4: Final controls:
+ </font></font><br><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[Image of final controls for animation]
+</font></font></p>
+<img src="./Facial Auto Rig_files/image022.jpg"> 
+ <br>
+ <br>
+  <div>
+   <a class="button is-danger" onclick="window.open(&#39;FacialAutoRig.html&#39;)"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Facial Auto Rig</font></font></a>
+ </div>
+ <br>
+ <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">I hope this tutorial is helpful!</font></font></p>
+ <hr>
+</section>
+
+ <div class=""><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+      Stay tuned for more details...
+ </font></font></div>
+
+ <div class="has-text-centered"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+   The video is here
+  </font></font></div>
+
+
+<footer class="footer has-background-grey-light">
+  <div class="content has-text-centered">
+    <p>
+      <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Gmail connection: </font></font></strong><a href="https://rigger-speed.github.io/face/alirezahabibi106@gmail.com"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Gmail connection</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> .
+       The </font><a href="http://opensource.org/licenses/mit-license.php"><font style="vertical-align: inherit;">second</font></a></font><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> way of communication
+       </font><font style="vertical-align: inherit;">. The
+      Instagram </font><font style="vertical-align: inherit;">Instagram
+     </font><font style="vertical-align: inherit;">page
+       </font><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><font style="vertical-align: inherit;">:</font></a></font><a href="http://opensource.org/licenses/mit-license.php"><font style="vertical-align: inherit;"></font></a><font style="vertical-align: inherit;"></font><br><font style="vertical-align: inherit;"></font><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><font style="vertical-align: inherit;"></font></a><font style="vertical-align: inherit;"></font></p>
+  </div>
+</footer><div id="goog-gt-tt" class="VIpgJd-yAWNEb-L7lbkb skiptranslate" style="border-radius: 12px; margin: 0 0 0 -23px; padding: 0; font-family: &#39;Google Sans&#39;, Arial, sans-serif;" data-id=""><div id="goog-gt-vt" class="VIpgJd-yAWNEb-hvhgNd"><div class=" VIpgJd-yAWNEb-hvhgNd-l4eHX-i3jM8c"><img src="./Facial Auto Rig_files/24px.svg" width="24" height="24" alt=""></div><div class=" VIpgJd-yAWNEb-hvhgNd-k77Iif-i3jM8c"><div class="VIpgJd-yAWNEb-hvhgNd-IuizWc" dir="ltr">Original text</div><div id="goog-gt-original-text" class="VIpgJd-yAWNEb-nVMfcd-fmcmS VIpgJd-yAWNEb-hvhgNd-axAV1"></div></div><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid ltr"><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid-B7I4Od ltr" dir="ltr"><div class="VIpgJd-yAWNEb-hvhgNd-UTujCb">Rate this translation</div><div class="VIpgJd-yAWNEb-hvhgNd-eO9mKe">Your feedback will be used to help improve Google Translate</div></div><div class="VIpgJd-yAWNEb-hvhgNd-xgov5 ltr"><button id="goog-gt-thumbUpButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="Good translation" aria-label="Good translation" aria-pressed="false"><span id="goog-gt-thumbUpIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7H2v13h16c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM7 18H4V9h3v9zm14-7l-3 7H9V8l4.34-4.34L12 9h9v2z"></path></svg></span><span id="goog-gt-thumbUpIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7v13h11c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM5 7H1v13h4V7z"></path></svg></span></button><button id="goog-gt-thumbDownButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="Poor translation" aria-label="Poor translation" aria-pressed="false"><span id="goog-gt-thumbDownIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7h5V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zM17 6h3v9h-3V6zM3 13l3-7h9v10l-4.34 4.34L12 15H3v-2z"></path></svg></span><span id="goog-gt-thumbDownIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zm16 0h4V4h-4v13z"></path></svg></span></button></div></div><div id="goog-gt-votingHiddenPane" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><form id="goog-gt-votingForm" action="https://translate.googleapis.com/translate_voting?client=te_lib" method="post" target="votingFrame" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><input type="text" name="sl" id="goog-gt-votingInputSrcLang"><input type="text" name="tl" id="goog-gt-votingInputTrgLang"><input type="text" name="query" id="goog-gt-votingInputSrcText"><input type="text" name="gtrans" id="goog-gt-votingInputTrgText"><input type="text" name="vote" id="goog-gt-votingInputVote"></form><iframe name="votingFrame" frameborder="0" src="./Facial Auto Rig_files/saved_resource.html"></iframe></div></div></div>
+
+ 
+
+ 
+</body></html>
