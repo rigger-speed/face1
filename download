@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Form</title>
+  <link rel='stylesheet' href="css/app.css">
+</head>
+<body class="container is-max-desktop has-background-light is-mobile has-text-black-bis">
+  <section class="container has-background-dark is-mobile">
+  <br>
+</section>
+ <div class="container is-centered mt-40">
+        <div class="buttons has-addons is-centered ">
+         <button class="button has-background-dark has-text-white-bis" onclick= "window.open('https://rigger-speed.github.io/face/')"><strong>Home</strong></button>
+         <button class="button has-background-dark has-text-white-bis" onclick= "window.open('FacialAutoRig-1.html')"><strong>Documentation</strong></button>
+         <button class="button has-background-dark has-text-white-bis" onclick= "window.open('tutorial.html')"><strong>Tutorial</strong></button>
+         <button class="button has-background-dark has-text-white-bis" onclick= "window.open('About.html')"><strong>About</strong></button>
+         <button class="button has-background-dark has-text-white-bis" onclick= "window.open('email.html')"><strong>Connect</strong></button>
+      </div>
+   </div>
+ <!--=============== -->
+
+
+
+  </body>
+</html>
