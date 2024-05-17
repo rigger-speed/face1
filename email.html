@@ -24,7 +24,7 @@
     action="https://formspree.io/f/xvoeyvjv"
     method="POST"
   >
-    
+    <label class="label has-text-danger" name="errorL" id="errorL">test</label>
     <label class="label has-text-black-bis">Contact Form</label>
       <div class="field">
         <div class="control">
@@ -66,10 +66,10 @@
 function validateForm() {
   var x = document.forms["myForm"]["email"].value;
   if (x == "") {
-    alert("Email must be filled out");
-    
+    // alert("Email must be filled out");
+    document.getElementById('errorL').innerHTML = 'Error : Email must be filled out! <br> Please fill in the fields marked with an asterisk';
     return false;
-  }
+  }else {document.getElementById('errorL').innerHTML = 'It was successful';}
 }
 </script>
   
