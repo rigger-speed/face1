@@ -21,8 +21,8 @@
 
 <form name="myForm" class="box has-background-light is-vcentered "
     onsubmit="return validateForm()">
-<!--    action="https://formspree.io/f/xvoeyvjv"-->
-<!--    method="POST"-->
+    action="https://formspree.io/f/xvoeyvjv"
+    method="POST"
 
     <label class="label has-text-danger" name="errorL" id="errorL"></label>
     <label class="label has-text-success" name="successful" id="successful"></label>
@@ -68,10 +68,11 @@ function validateForm() {
   var x = document.forms["myForm"]["email"].value;
   if (x == "") {
     // alert("Email must be filled out");
-    document.getElementById('errorL').innerHTML = 'Error : Email must be filled out! <br> Please fill in the fields marked with an asterisk(*)';
+    document.getElementById('errorL').innerHTML = 'Error : Email must be filled out! <br> Please fill in the fields marked with an asterisk';
     document.getElementById('successful').innerHTML = '';
     return false;
-  }else {document.getElementById('errorL').innerHTML = '';
+  }
+  else {document.getElementById('errorL').innerHTML = '';
          document.getElementById('successful').innerHTML = 'It was successful';
   }
   var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
