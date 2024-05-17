@@ -74,6 +74,17 @@ function validateForm() {
   }else {document.getElementById('errorL').innerHTML = '';
          document.getElementById('successful').innerHTML = 'It was successful';
   }
+  var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+  if (reg.test(x) == false)
+        {
+            // alert('Invalid Email Address');
+            document.getElementById('errorL').innerHTML = 'Error : Invalid Email Address! <br> Please enter the correct email address';
+            document.getElementById('successful').innerHTML = '';
+            return false;
+        }else {document.getElementById('errorL').innerHTML = '';
+         document.getElementById('successful').innerHTML = 'It was successful';
+  }
+
 }
 </script>
   
