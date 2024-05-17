@@ -108,31 +108,31 @@
   </section>
 
   <!--====== label===Email========= -->
-<div class="box has-background-light is-vcentered ">
+<div name="divA" class="box has-background-light is-vcentered ">
      <div class="field is-grouped has-text-black-bis" >
        <label class="label has-text-black-bis">Email</label>
        <label class="label has-text-black-bis " style="padding-left: 10rem;">Message</label>
      </div>
+    <!-- modify this form HTML and place wherever you want your form -->
+   <section name="sec" class=" has-background-light is-centered is-5" >
+     <form name="myForm" class="field is-grouped" onsubmit="return validateForm()"
+           action="https://formspree.io/f/xvoeyvjv"  method="POST">
+        <p class="control ">
+          <input class="input" type="text" name="email" placeholder="Your email:*">
+        </p>
 
-<!-- modify this form HTML and place wherever you want your form -->
-<section class=" has-background-light is-centered is-5" >
-<div class="field is-grouped" action="https://formspree.io/f/xvoeyvjv"  method="POST">
-  <p class="control ">
-    <input class="input" type="text" name="email" placeholder="Your email:*">
-  </p>
-  
-  <p class="control ">
-    <textarea class="textarea" rows="1" name="message" placeholder=" Your message:*"></textarea>
-  </p>
-  <p class="control">
-    <button class="button is-info" type="submit">
-      Send
-    </button>
-  </p>
+        <p class="control ">
+          <textarea class="textarea" rows="1" name="message" placeholder=" Your message:*"></textarea>
+        </p>
+        <p class="control">
+           <button class="button is-info" type="submit">Send</button>
+        </p>
+        <label class="label has-text-danger" name="errorL" id="errorL">test</label>
+        <label class="label has-text-success" name="successful" id="successful">test</label>
+     </form>
+   </section>
 
-  </div>
 
-</section>
 </div>
 
   <div>
@@ -168,6 +168,31 @@
 
 
 
+<script type="text/javascript">
+function validateForm() {
+  var x = document.forms["myForm"]["email"].value;
+  if (x == "") {
+    // alert("Email must be filled out");
+    document.getElementById('errorL').innerHTML = 'Error : Email must be filled out! <br> Please fill in the fields marked with an asterisk';
+    document.getElementById('successful').innerHTML = '';
+    return false;
+  }
+  else {document.getElementById('errorL').innerHTML = '';
+         document.getElementById('successful').innerHTML = 'It was successful';
+  }
+  var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+  if (reg.test(x) == false)
+        {
+            // alert('Invalid Email Address');
+            document.getElementById('errorL').innerHTML = 'Error : Invalid Email Address! <br> Please enter the correct email address';
+            document.getElementById('successful').innerHTML = '';
+            return false;
+        }else {document.getElementById('errorL').innerHTML = '';
+         document.getElementById('successful').innerHTML = 'It was successful';
+  }
+
+}
+</script>
 
 
 </body> 
