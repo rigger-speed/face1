@@ -20,12 +20,13 @@
  <!--=============== -->
 
 <form name="myForm" class="box has-background-light is-vcentered "
-    onsubmit="return validateForm()"
-    action="https://formspree.io/f/xvoeyvjv"
-    method="POST"
-  >
-    <label class="label has-text-danger" name="errorL" id="errorL">test</label>
-    <label class="label has-text-black-bis">Contact Form</label>
+    onsubmit="return validateForm()">
+<!--    action="https://formspree.io/f/xvoeyvjv"-->
+<!--    method="POST"-->
+
+    <label class="label has-text-danger" name="errorL" id="errorL"></label>
+    <label class="label has-text-success" name="successful" id="successful"></label>
+    <label class="label has-text-black-bis" name="message">Contact Form</label>
       <div class="field">
         <div class="control">
             <input class="input is-mobile" type="text" name="name" id="name" placeholder="Name" >
@@ -38,7 +39,7 @@
     </div>
     <div class="field">
         <div class="select is-fullwidth is-mobile" >
-            <select name="message" id="message" >
+            <select name="message"  >
             <option disabled selected>Select product</option>
             <option>arh_FacialAutoRig</option>
             <option>arh_EyeAutoRig</option>
@@ -68,8 +69,11 @@ function validateForm() {
   if (x == "") {
     // alert("Email must be filled out");
     document.getElementById('errorL').innerHTML = 'Error : Email must be filled out! <br> Please fill in the fields marked with an asterisk';
+    document.getElementById('successful').innerHTML = '';
     return false;
-  }else {document.getElementById('errorL').innerHTML = 'It was successful';}
+  }else {document.getElementById('errorL').innerHTML = '';
+         document.getElementById('successful').innerHTML = 'It was successful';
+  }
 }
 </script>
   
