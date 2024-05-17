@@ -19,20 +19,26 @@
    </div>
  <!--=============== -->
 
-<form class="box has-background-light is-vcentered is-5 m-6"
-  action="https://formspree.io/f/xvoeyvjv"
-  method="POST"
->
+<form name="myForm" class="box has-background-light is-vcentered "
+    onsubmit="return validateForm()"
+    action="https://formspree.io/f/xvoeyvjv"
+    method="POST"
+  >
     
     <label class="label has-text-black-bis">Contact Form</label>
-    <div class="field">
+      <div class="field">
         <div class="control">
-            <input class="input is-mobile" type="email" name="email" placeholder="Email*">
+            <input class="input is-mobile" type="text" name="name" id="name" placeholder="Name" >
         </div>
     </div>
     <div class="field">
-        <div class="select is-fullwidth is-mobile" name="message">
-            <select>
+        <div class="control">
+            <input class="input is-mobile" type="email" name="email" id="email" placeholder="Email*" >
+        </div>
+    </div>
+    <div class="field">
+        <div class="select is-fullwidth is-mobile" >
+            <select name="message" id="message" >
             <option disabled selected>Select product</option>
             <option>arh_FacialAutoRig</option>
             <option>arh_EyeAutoRig</option>
@@ -56,7 +62,16 @@
     </div>
 </form>
 
-  
+<script type="text/javascript">
+function validateForm() {
+  var x = document.forms["myForm"]["email"].value;
+  if (x == "") {
+    alert("Email must be filled out");
+    
+    return false;
+  }
+}
+</script>
   
 </body>
 </html>
