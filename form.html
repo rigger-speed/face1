@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>بارگذاری و نمایش فایل</title>
+    <style>
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="file" id="fileInput">
+        <button onclick="loadFile()">بارگذاری فایل</button>
+        <button onclick="showContent()">نمایش محتوا</button>
+        <textarea id="fileContent" rows="10" cols="50"></textarea>
+    </div>
+
+    <script>
+        function loadFile() {
+            var input = document.getElementById('fileInput');
+            var file = input.files[0];
+
+            var reader = new FileReader();
+            reader.onload = function() {
+                var text = reader.result;
+                document.getElementById('fileContent').value = text;
+            };
+            reader.readAsText(file);
+        }
+
+        function showContent() {
+            // این تابع برای نمایش محتوا در حالت کنسول است، شما می توانید آن را با توجه به نیاز خود تغییر دهید
+            var content = document.getElementById('fileContent').value;
+            console.log(content);
+        }
+    </script>
+</body>
+</html>
