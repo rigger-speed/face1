@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>بارگذاری و نمایش فایل</title>
-    <style>
-        .container {
-            text-align: center;
-            margin-top: 50px;
-        }
-    </style>
+  <title>Contact Form</title>
+  <link rel='stylesheet' href="css/app.css">
+  <link rel="icon" href="icon.png">
 </head>
 <body>
     <div class="container">
@@ -18,29 +14,13 @@
     >
         <input type="file" id="fileInput">
         <button class="button is-primary is-fullwidth " onclick="loadFile()">بارگذاری فایل</button>
-        //<button class="button is-primary is-fullwidth " onclick="showContent()">نمایش محتوا</button>
-        //<button class="button is-primary is-fullwidth " type="submit" >Submit</button>
+        <button class="button is-primary is-fullwidth " onclick="showContent()">نمایش محتوا</button>
+        <button class="button is-primary is-fullwidth " type="submit" >Submit</button>
         <textarea class="textarea is-mobile has-background-light has-text-black-bis" id="fileContent" rows="10" cols="50" name="message"></textarea>
    </form>
     </div>
     
-   <section name="sec" class=" has-background-light is-centered is-5" >
-     <form name="myForm" class="field is-grouped" onsubmit="return validateForm()"
-           action="https://formspree.io/f/xvoeyvjv"  method="POST">
-        <p class="control ">
-          <input type="file" id="fileInput">
-        </p>
 
-        <p class="control ">
-          <button class="button is-primary is-fullwidth " onclick="loadFile()">Browser</button>
-        </p>
-        <p class="control">
-           <button class="button is-info" type="submit">Send</button>
-        </p>
-        <label class="label has-text-danger" name="errorL" id="errorL"></label>
-        <label class="label has-text-success" name="successful" id="successful"></label>
-     </form>
-   </section>
     
     <script>
         function loadFile() {
