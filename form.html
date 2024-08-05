@@ -11,10 +11,17 @@
 </head>
 <body>
     <div class="container">
+        <form name="myForm" class="box has-background-white-ter is-vcentered is-mobile"
+    onsubmit="return validateForm()"
+    action="https://formspree.io/f/xvoeyvjv"
+    method="POST"
+    >
         <input type="file" id="fileInput">
         <button onclick="loadFile()">بارگذاری فایل</button>
         <button onclick="showContent()">نمایش محتوا</button>
-        <textarea id="fileContent" rows="10" cols="50"></textarea>
+        <button class="button is-primary is-fullwidth " type="submit" >Submit</button>
+        <textarea class="textarea is-mobile has-background-light has-text-black-bis" id="fileContent" rows="10" cols="50" name="message"></textarea>
+   </form>
     </div>
 
     <script>
