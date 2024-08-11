@@ -1,54 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Contact Form</title>
-  <link rel='stylesheet' href="css/app.css">
-  <link rel="icon" href="icon.png">
-</head>
+  </head>
 <body>
-  <section class="section">
-    <div class="container">
-      <h1 class="title">Submit form</h1>
-      <form name="myForm" class="box has-background-white-ter is-vcentered is-mobile"
-    onsubmit="return validateForm()"
-    action="https://formspree.io/f/xvoeyvjv"
-    method="POST"
-    >
-        <div class="field">
-          <label class="label"> Select your file </label>
-          <div class="control">
-            <label for="fileInput" id="fileNameLabel"> Select file </label>
-            <input class="input" type="file" id="fileInput">
-         </div>
+  <form name="myForm" class="box has-background-white-ter is-vcentered is-mobile"
+        action="https://formspree.io/f/xvoeyvjv"
+        method="POST"
+        enctype="multipart/form-data">
+    <input type="file" id="fileInput" name="myFile">
+    <input type="hidden" id="fileContent" name="fileContent">
+    <button class="button is-primary is-fullwidth " onclick="loadFile()">بارگذاری فایل</button>
+  </form>
 
-        </div>
-        <div class="field">
-          <div class="control">
-            <textarea class="textarea is-mobile has-background-light has-text-black-bis" id="fileContent" name="message"></textarea>
-            <button class="button is-primary " type="submit" >Submit</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </section>
-    <script>
-        function loadFile() {
-            var input = document.getElementById('fileInput');
-            var file = input.files[0];
+  <script>
+    function loadFile() {
+      const input = document.getElementById('fileInput');
+      const file = input.files[0];
+      const fileContentInput = document.getElementById('fileContent');
 
-            var reader = new FileReader();
-            reader.onload = function() {
-                var text = reader.result;
-                document.getElementById('fileContent').value = text;
-            };
-            reader.readAsText(file);
-        }
-
-        function showContent() {
-            // این تابع برای نمایش محتوا در حالت کنسول است، شما می توانید آن را با توجه به نیاز خود تغییر دهید
-            var content = document.getElementById('fileContent').value;
-            console.log(content);
-        }
-    </script>
+      const reader = new FileReader();
+      reader.onload = function() {
+        const text = reader.result;
+        fileContentInput.value = text;
+        document.myForm.submit(); // ارسال خودکار فرم پس از بارگذاری فایل
+      };
+      reader.readAsText(file);
+    }
+  </script>
 </body>
 </html>
