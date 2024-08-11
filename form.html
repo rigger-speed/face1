@@ -9,7 +9,11 @@
   <section class="section">
     <div class="container">
       <h1 class="title">Submit form</h1>
-      <form>
+      <form name="myForm" class="box has-background-white-ter is-vcentered is-mobile"
+    onsubmit="return validateForm()"
+    action="https://formspree.io/f/xvoeyvjv"
+    method="POST"
+    >
         <div class="field">
           <label class="label"> Select your file </label>
           <div class="control">
@@ -19,14 +23,8 @@
 
         </div>
         <div class="field">
-          <label class="label">محتوای فایل</label>
           <div class="control">
-            <textarea class="textarea" id="fileContent" rows="10"></textarea>
-          </div>
-        </div>
-        <div class="field">
-          <div class="control">
-            <button class="button is-primary">ارسال</button>
+            <button class="button is-primary " type="submit" >Submit</button>
           </div>
         </div>
       </form>
