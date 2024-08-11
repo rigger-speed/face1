@@ -1,37 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Contact Form</title>
-  <link rel='stylesheet' href="css/app.css">
-  <link rel="icon" href="icon.png">
-</head>
+  </head>
 <body>
   <form name="myForm" class="box has-background-white-ter is-vcentered is-mobile"
         action="https://formspree.io/f/xvoeyvjv"
         method="POST"
         enctype="multipart/form-data">
     <input type="file" id="fileInput" name="myFile">
-    <p id="filePath"></p>
     <input type="hidden" id="fileContent" name="fileContent">
-    <button class="button is-primary" onclick="loadFile()">انتخاب فایل</button>
-    <button class="button is-primary" id="submitBtn" disabled>ارسال</button>
+    <button class="button is-primary is-fullwidth " onclick="loadFile()">بارگذاری فایل</button>
   </form>
 
   <script>
     function loadFile() {
       const input = document.getElementById('fileInput');
-      const filePath = document.getElementById('filePath');
-      const fileContentInput = document.getElementById('fileContent');
-      const submitBtn = document.getElementById('submitBtn');
-
       const file = input.files[0];
-      filePath.textContent = file.name; // نمایش نام فایل
+      const fileContentInput = document.getElementById('fileContent');
 
       const reader = new FileReader();
       reader.onload = function() {
         const text = reader.result;
-        fileContentInput.value = text;
-        submitBtn.disabled = false; // فعال کردن دکمه ارسال
+        var content = document.getElementById('fileContent').value;
+        fileContentInput.value = content;
+        document.myForm.submit(); // ارسال خودکار فرم پس از بارگذاری فایل
       };
       reader.readAsText(file);
     }
