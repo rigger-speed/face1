@@ -12,10 +12,19 @@
     onsubmit="return validateForm()"
     action="https://formspree.io/f/xvoeyvjv"
     method="POST"
+    enctype="multipart/form-data"
     >
         <input type="file" id="fileInput" accept=".txt,.pya" onchange="loadFile()">
 
         <textarea style="display:none;" id="fileContent" name="message"></textarea>
+       <label>
+    Your email:
+    <input type="email" name="email">
+    </label>
+        <label>
+    Your file:
+    <input type="file" name="upload">
+    </label>
         <p class="control "><button class="button is-primary" type="submit" >Submit</button></p>
    </form>
 
