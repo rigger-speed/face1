@@ -13,14 +13,14 @@
     action="https://formspree.io/f/xvoeyvjv"
     method="POST"
     >
-          <input type="file" id="fileInput" onchange="loadFile()">
-         <div id="displayArea" name="message"></div>
+         <input type="file" id="fileInput" onchange="loadFile()">
+         <!--<div id="fileContent" name="message"></div>-->
          <!--<input class="input" type="file" id="fileInput">-->
          <!--<button class="button is-primary" name="message" onclick=onclick="loadFile(); ">بارگذاری فایل</button> -->
         <!--<button class="button is-primary" onclick="showContent()">نمایش محتوا</button> -->
          <!--<button class="button is-primary" name="message" onclick="showContent()">نمایش محتوا</button>-->
    
-        <!--<textarea id="fileContent" name="message"></textarea>-->
+        <textarea id="fileContent" name="message"></textarea>
         <p class="control "><button class="button is-primary" type="submit" >Submit</button></p>
    </form>
 
@@ -35,7 +35,7 @@ function loadFile() {
         // به جای قرار دادن در یک عنصر، مستقیماً نمایش می‌دهیم
         console.log(text);
         // اگر می‌خواهید در یک عنصر دیگر نمایش دهید:
-        document.getElementById('displayArea').textContent = text;
+        document.getElementById('fileContent').textContent = text;
     };
     reader.readAsText(file);
 }
