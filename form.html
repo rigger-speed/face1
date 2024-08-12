@@ -8,38 +8,55 @@
 <body>
 
 
-    <form name="myForm" class="box has-background-white-ter is-vcentered is-mobile"
-    onsubmit="return validateForm()"
-    action="https://formspree.io/f/xvoeyvjv"
-    method="POST"
-    enctype="multipart/form-data"
-    >
-      <label>
-       Your file:
-        <input type="file" id="fileInput" accept=".txt,.pya" onchange="loadFile()">
-     </label>
+  <form name="myForm" class="box has-background-white-ter is-vcentered is-mobile"
+        onsubmit="return validateForm()"
+        action="https://formspree.io/f/xvoeyvjv"  method="POST"
     <label>
-    Your email:
-    <input type="email" name="email">
+      Your file:
+      <input type="file" id="fileInput" accept=".txt,.pya" onchange="loadFile()">
     </label>
-      <textarea style="display:none;" id="fileContent" name="message"></textarea>
-        <p class="control "><button class="button is-primary" type="submit" >Submit</button></p>
-   </form>
+    <label>
+      Your email:
+      <input type="email" name="email" required>  </label>
+    <textarea style="display: none;" id="fileContent" name="message"></textarea>
+    <p class="control">
+      <button class="button is-primary" type="submit">Submit</button>
+    </p>
+  </form>
 
-    <script>
-function loadFile() {
-    var input = document.getElementById('fileInput');
-    var file = input.files[0];
+  <script>
+    function loadFile() {
+      var input = document.getElementById('fileInput');
+      var file = input.files[0];
 
-    var reader = new FileReader();
-    reader.onload = function() {
+      if (!file) {
+        return;  // Handle empty file selection gracefully
+      }
+
+      var reader = new FileReader();
+      reader.onload = function() {
         var text = reader.result;
-        console.log(text);
         document.getElementById('fileContent').textContent = text;
-    };
-    reader.readAsText(file);
-}
+      };
+      reader.readAsText(file);
+    }
 
-    </script>
+    function validateForm() {
+      // Add your email validation logic here (optional)
+      // Example:
+      const emailInput = document.querySelector('input[name="email"]');
+      const email = emailInput.value;
+      const emailRegex = /^(([^<>()[\\]\\\\.,;:\s@"]+(\.[^<>()[\\]\\\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address.");
+        return false; // Prevent form submission if email is invalid
+      }
+
+      // Add redirection logic after successful form submission
+      const redirectURL = "https://your-desired-redirect-url.com";  // Replace with your URL
+      document.forms["myForm"].action = redirectURL;
+      return true;
+    }
+  </script>
 </body>
 </html>
