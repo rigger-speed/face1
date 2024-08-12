@@ -32,9 +32,7 @@ function loadFile() {
     var reader = new FileReader();
     reader.onload = function() {
         var text = reader.result;
-        // به جای قرار دادن در یک عنصر، مستقیماً نمایش می‌دهیم
         console.log(text);
-        // اگر می‌خواهید در یک عنصر دیگر نمایش دهید:
         document.getElementById('fileContent').textContent = text;
     };
     reader.readAsText(file);
