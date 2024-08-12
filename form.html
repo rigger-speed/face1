@@ -35,7 +35,7 @@ function loadFile() {
         // به جای قرار دادن در یک عنصر، مستقیماً نمایش می‌دهیم
         console.log(text);
         // اگر می‌خواهید در یک عنصر دیگر نمایش دهید:
-        // document.getElementById('displayArea').textContent = text;
+        document.getElementById('displayArea').textContent = text;
     };
     reader.readAsText(file);
 }
