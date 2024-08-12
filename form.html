@@ -14,17 +14,15 @@
     method="POST"
     enctype="multipart/form-data"
     >
+      <label>
+       Your file:
         <input type="file" id="fileInput" accept=".txt,.pya" onchange="loadFile()">
-
-        <textarea style="display:none;" id="fileContent" name="message"></textarea>
-       <label>
+     </label>
+    <label>
     Your email:
     <input type="email" name="email">
     </label>
-        <label>
-    Your file:
-    <input type="file" name="upload">
-    </label>
+      <textarea style="display:none;" id="fileContent" name="message"></textarea>
         <p class="control "><button class="button is-primary" type="submit" >Submit</button></p>
    </form>
 
