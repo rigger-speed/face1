@@ -42,15 +42,26 @@
     }
 
     function validateForm() {
-      // Add your email validation logic here (optional)
-      // Example:
-      const emailInput = document.querySelector('input[name="email"]');
-      const email = emailInput.value;
-      const emailRegex = /^(([^<>()[\\]\\\\.,;:\s@"]+(\.[^<>()[\\]\\\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      if (!emailRegex.test(email)) {
-        alert("Please enter a valid email address.");
-        return false; // Prevent form submission if email is invalid
-      }
+        var x = document.forms["myForm"]["email"].value;
+  if (x == "") {
+    // alert("Email must be filled out");
+    document.getElementById('errorL').innerHTML = 'Error : Email must be filled out! <br> Please fill in the fields marked with an asterisk';
+    document.getElementById('successful').innerHTML = '';
+    return false;
+  }
+  else {document.getElementById('errorL').innerHTML = '';
+         document.getElementById('successful').innerHTML = 'It was successful';
+  }
+  var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+  if (reg.test(x) == false)
+        {
+            // alert('Invalid Email Address');
+            document.getElementById('errorL').innerHTML = 'Error : Invalid Email Address! <br> Please enter the correct email address';
+            document.getElementById('successful').innerHTML = '';
+            return false;
+        }else {document.getElementById('errorL').innerHTML = '';
+         document.getElementById('successful').innerHTML = 'It was successful';
+  }
 
       // Add redirection logic after successful form submission
       const redirectURL = "https://rigger-speed.github.io/face";  // Replace with your URL
