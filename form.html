@@ -41,7 +41,8 @@
     }
     
     function validateForm() {
-        var x = document.forms["myForm"]["email"].value;
+      var x = document.forms["myForm"]["email"].value;
+      alert('Invalid Email Address');
   if (x == "") {
     // alert("Email must be filled out");
     document.getElementById('errorL').innerHTML = 'Error : Email must be filled out! <br> Please fill in the fields marked with an asterisk';
