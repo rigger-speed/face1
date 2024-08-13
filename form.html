@@ -42,7 +42,11 @@
     
     function validateForm() {
       var x = document.forms["myForm"]["email"].value;
-      alert('Invalid Email Address');
+      var file = document.forms["myForm"]["fileInput"].value;
+      if (file== "") {
+        document.getElementById('errorL').innerHTML = 'Please select a file to upload.';
+        return false;
+      }
   if (x == "") {
     // alert("Email must be filled out");
     document.getElementById('errorL').innerHTML = 'Error : Email must be filled out! <br> Please fill in the fields marked with an asterisk';
@@ -63,12 +67,8 @@
          document.getElementById('successful').innerHTML = 'It was successful';
   }
 
-      var file = document.forms["myForm"]["fileInput"].value;
-      if (!file) {
-        document.getElementById('errorL').innerHTML = 'Please select a file to upload.';
-        return false;
-      }
-      alert('Invalid Email Address');
+
+      
       // Add redirection logic after successful form submission
       const redirectURL = "https://rigger-speed.github.io/face/";  // Replace with your URL
       document.forms["myForm"].action = redirectURL;
