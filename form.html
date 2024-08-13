@@ -43,9 +43,9 @@
     function validateForm() {
       var x = document.forms["myForm"]["email"].value;
       var input = document.getElementById('fileInput');
-      var file = input.files[0];
-      
-      if (file== "undefined") {
+      var file = input;
+      alert(file);
+      if (file== "") {
         alert(file);
         return false;
       }
