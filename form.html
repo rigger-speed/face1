@@ -45,7 +45,7 @@
       var input = document.getElementById('fileInput');
       var file = input.files[0];
       alert(file);
-      if (file== "") {
+      if (file== "undefined") {
         document.getElementById('errorL').innerHTML = 'Please select a file to upload.';
         return false;
       }
