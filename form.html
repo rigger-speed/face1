@@ -43,6 +43,7 @@
     function validateForm() {
       var x = document.forms["myForm"]["email"].value;
       var file = document.forms["myForm"]["fileInput"].value;
+      alert(file);
       if (file== "") {
         document.getElementById('errorL').innerHTML = 'Please select a file to upload.';
         return false;
