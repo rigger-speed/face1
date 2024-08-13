@@ -37,13 +37,10 @@ function loadFile() {
     const text = reader.result;
     const lines = text.split('\n');
 
-    // بررسی تعداد خطوط
     if (lines.length === 2) {
-      // اگر دو خط بود، محتوای فایل را نمایش می‌دهیم
       document.getElementById('fileContent').textContent = text;
     } else {
-      // اگر تعداد خطوط متفاوت بود، پیغامی نمایش می‌دهیم
-      alert('فایل باید دقیقاً دو خط داشته باشد.');
+      alert('There is a problem with the file');
     }
   };
   reader.readAsText(file);
