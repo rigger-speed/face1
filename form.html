@@ -41,7 +41,7 @@ function loadFile() {
       document.getElementById('fileContent').textContent = text;
     } else {
       input.value = '';
-      alert('There is a problem with the file');
+      alert('There is a problem with the file \nPlease enter the correct file');
     }
   };
   reader.readAsText(file);
