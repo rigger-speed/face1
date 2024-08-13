@@ -27,11 +27,9 @@
     function loadFile() {
       var input = document.getElementById('fileInput');
       var file = input.files[0];
-
       if (!file) {
         return;  // Handle empty file selection gracefully
       }
-
       var reader = new FileReader();
       reader.onload = function() {
         var text = reader.result;
