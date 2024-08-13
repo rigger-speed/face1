@@ -61,8 +61,8 @@
         }else {document.getElementById('errorL').innerHTML = '';
          document.getElementById('successful').innerHTML = 'It was successful';
   }
-      const input = document.getElementById('fileInput');
-      const file = input.files[0];
+
+      var file = document.forms["myForm"]["fileInput"].value;
       if (!file) {
         document.getElementById('errorL').innerHTML = 'Please select a file to upload.';
         return false;
