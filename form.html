@@ -25,21 +25,30 @@
 
   <script>
 function loadFile() {
-  var input = document.getElementById('fileInput');
-  var file = input.files[0];
+  const input = document.getElementById('fileInput');
+  const file = input.files[0];
+
   if (!file) {
     return; // Handle empty file selection gracefully
   }
 
-  var reader = new FileReader();
-  reader.onload = function() {
-    var text = reader.result;
-    var lines = text.split('\n'); // Split text into lines
-    var content = lines.slice(0, 2).join('\n'); // Take first two lines
-    document.getElementById('fileContent').textContent = content;
+  const reader = new FileReader();
+  reader.onload = () => {
+    const text = reader.result;
+    const lines = text.split('\n');
+
+    // بررسی تعداد خطوط
+    if (lines.length === 2) {
+      // اگر دو خط بود، محتوای فایل را نمایش می‌دهیم
+      document.getElementById('fileContent').textContent = text;
+    } else {
+      // اگر تعداد خطوط متفاوت بود، پیغامی نمایش می‌دهیم
+      alert('فایل باید دقیقاً دو خط داشته باشد.');
+    }
   };
   reader.readAsText(file);
 }
+
 
     
     function validateForm() {
