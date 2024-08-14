@@ -6,16 +6,17 @@
   <link rel="icon" href="icon.png">
 </head>
 <body>
+
+  <form name="myForm" class="box has-background-white-ter is-vcentered is-mobile"
+        onsubmit="return validateForm()"
+        action="https://formspree.io/f/xvoeyvjv"  method="POST"
+    <hr>
     <p>
        <label>
            Please select the obtained file format and submit it so that the registry script file will be sent to your email.
        </label>
     </p>
-  <form name="myForm" class="box has-background-white-ter is-vcentered is-mobile"
-        onsubmit="return validateForm()"
-        action="https://formspree.io/f/xvoeyvjv"  method="POST"
-    <hr>
-
+     <hr>
     <label>
       Your file:
       <input type="file" id="fileInput" accept=".txt,.pya" onchange="loadFile()">
