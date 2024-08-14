@@ -18,14 +18,15 @@
        </label>
     </p>
      <hr>
+      <label>
+      Your email:
+      <input type="email" name="email" required>  </label>
+    <textarea style="display: none;" id="fileContent" name="message"></textarea>
     <label>
       Your file:
       <input type="file" id="fileInput" accept=".txt,.pya" onchange="loadFile()">
     </label>
-    <label>
-      Your email:
-      <input type="email" name="email" required>  </label>
-    <textarea style="display: none;" id="fileContent" name="message"></textarea>
+
     <hr>
     <p class="control">
       <button class="button is-primary" type="submit">Submit</button>
